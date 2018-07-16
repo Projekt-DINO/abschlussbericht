@@ -1,0 +1,55 @@
+%% !TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[onehalfspacing]{setspace} %1.5px Zeilenabstand
+\usepackage[ngerman]{babel}
+\usepackage{graphicx} % Grafikpaket laden
+\usepackage{mathptmx} %Times New Roman
+\usepackage{apacite} %APA 6
+\usepackage[hyphens]{url}
+\usepackage{acronym} %Abkürzungen
+\usepackage{tocstyle}  % Für Punkte im Inhaltsverzeichnis
+\usepackage{multicol}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand*\wildcard[2][5cm]{\vspace*{2cm}\parbox{#1}{\hrulefill\par#2}}
+\newcommand*{\quelle}{%
+  \footnotesize Quelle: 
+} 
+
+\begin{document}
+
+% Deckblatt
+\input{Text/Deckblatt}
+
+% Inhaltsverzeichnis
+\newpage
+\newtocstyle[KOMAlike][leaders]{alldotted}{} %Gepunktete Linien
+\usetocstyle{alldotted} % Gepunktete Linien
+\tableofcontents
+% Ende Inhaltsverzeichnis
+
+% Abkürzungsverzeichnis
+\newpage
+\section*{Abkürzungsverzeichnis}
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis} %Section ohne Nummer im Inhaltsverzeichnis
+\begin{acronym}[WLAN]	%USA als längste Abkürzung Def. für Tab Abstand
+	\setlength{\itemsep}{-\parsep} % kein Abstand, kompakte Darstellung 
+	\acro{dino}[DINO]{Düsseldorf Information Nachhaltigkeit Offenheit}
+
+\end{acronym}
+
+% Abbildungsverzeichnis
+\listoffigures
+\newpage
+
+% Literaturverzeichnis
+\newpage
+\bibliographystyle{apacite}
+\bibliography{Literaturverzeichnis}
+	
+
+\end{document}

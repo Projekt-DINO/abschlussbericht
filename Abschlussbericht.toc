@@ -1,0 +1,2 @@
+\select@language {ngerman}
+\contentsline {section}{Abk\IeC {\"u}rzungsverzeichnis}{2}
